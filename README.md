@@ -1,10 +1,10 @@
-# ML4W Dotfiles Installer
+# Differentunic Dotfiles Installer
 
 An authentic, modular, and safe way to deploy Linux configurations. This script acts as a professional **Profile Manager** that allows you to manage multiple dotfile setups, handles distribution-specific dependencies for **Arch**, **Fedora**, and **openSUSE**, and uses an intelligent symlinking system with automated backups.
 
 ## 🛠 Installation and Documentation
 
-You can find all installation options in the documentation of the ML4W Dotfiles Installer here:<br><b>https://ml4w.com/dotfiles-installer/</b>
+You can find all installation options in the documentation of the Differentunic Dotfiles Installer here:<br><b>https://differentunic.com/dotfiles-installer/</b>
 
 ## 🚀 Key Features
 
@@ -24,12 +24,12 @@ To install the installer script to your local system:
 
 1. **Clone the repository.**
 ```bash
-git clone https://github.com/mylinuxforwork/ml4w-dotfiles-installer
+git clone https://github.com/differentunic/differentunic-dotfiles-installer
 
 ```
 2. **Run the installation:**
 ```bash
-cd ml4w-dotfiles-installer
+cd differentunic-dotfiles-installer
 make install
 
 ```
@@ -45,7 +45,7 @@ Make sure `~/.local/bin` is in your environment `$PATH`.
 To install a dotfiles profile using a remote URL:
 
 ```bash
-ml4w-dotfiles-installer --install https://raw.githubusercontent.com/user/repo/main/profile.dotinst
+differentunic-dotfiles-installer --install https://raw.githubusercontent.com/user/repo/main/profile.dotinst
 
 ```
 
@@ -54,7 +54,7 @@ ml4w-dotfiles-installer --install https://raw.githubusercontent.com/user/repo/ma
 To test a local configuration file during development:
 
 ```bash
-ml4w-dotfiles-installer --install ~/Projects/dotfiles/dev.dotinst
+differentunic-dotfiles-installer --install ~/Projects/dotfiles/dev.dotinst
 
 ```
 
@@ -63,7 +63,7 @@ ml4w-dotfiles-installer --install ~/Projects/dotfiles/dev.dotinst
 Run the entire installation process—including package installation and pre/post scripts—without staging files or creating symlinks in your home directory. This is ideal for testing dependency logic on new distros:
 
 ```bash
-ml4w-dotfiles-installer --install ~/Projects/dotfiles/dev.dotinst --testmode
+differentunic-dotfiles-installer --install ~/Projects/dotfiles/dev.dotinst --testmode
 
 ```
 
@@ -75,12 +75,12 @@ ml4w-dotfiles-installer --install ~/Projects/dotfiles/dev.dotinst --testmode
 
 ```json
 {
-  "name": "ML4W Hyprland Stable",
-  "id": "com.ml4w.hyprland",
+  "name": "Differentunic Hyprland Stable",
+  "id": "com.differentunic.hyprland",
   "version": "2.10.1",
   "author": "Stephan Raabe",
-  "homepage": "https://ml4w.com",
-  "source": "https://github.com/mylinuxforwork/dotfiles.git",
+  "homepage": "https://differentunic.com",
+  "source": "https://github.com/differentunic/dotfiles.git",
   "subfolder": "dotfiles",
   "restore": [
     {
@@ -102,9 +102,9 @@ Users can define their own personal post-installation steps that run after the r
 
 **To add an override:**
 
-1. Create the profile config folder: `mkdir -p ~/.config/ml4w-dotfiles-installer/[PROFILE_ID]`
-2. Create your script: `nano ~/.config/ml4w-dotfiles-installer/[PROFILE_ID]/post.sh`
-3. Make it executable: `chmod +x ~/.config/ml4w-dotfiles-installer/[PROFILE_ID]/post.sh`
+1. Create the profile config folder: `mkdir -p ~/.config/differentunic-dotfiles-installer/[PROFILE_ID]`
+2. Create your script: `nano ~/.config/differentunic-dotfiles-installer/[PROFILE_ID]/post.sh`
+3. Make it executable: `chmod +x ~/.config/differentunic-dotfiles-installer/[PROFILE_ID]/post.sh`
 
 The installer will detect this script and run it at the very end of the setup logic.
 
@@ -113,7 +113,7 @@ The installer will detect this script and run it at the very end of the setup lo
 The blacklist allows you to prevent specific files in a profile from being overwritten during an update. This is useful for configuration files you want to manage manually or keep strictly local.
 
 **Example:**
-To prevent the installer from overwriting your local monitor setup or a specific theme file, add them to `~/.config/ml4w-dotfiles-installer/[PROFILE_ID]/blacklist`:
+To prevent the installer from overwriting your local monitor setup or a specific theme file, add them to `~/.config/differentunic-dotfiles-installer/[PROFILE_ID]/blacklist`:
 
 ```text
 # Blacklist Example

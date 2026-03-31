@@ -207,7 +207,7 @@ run_setup_logic() {
     local repo_path=$1; local profile_id=$2
     local distro=$(get_distro_by_bin)
     local dep_dir="$repo_path/setup/dependencies"
-    local user_config_dir="$HOME/.config/ml4w-dotfiles-installer/$profile_id"
+    local user_config_dir="$HOME/.config/differentunic-dotfiles-installer/$profile_id"
     
     # 1. Repo Preflight
     local preflight="$repo_path/setup/preflight-$distro.sh"
@@ -294,7 +294,7 @@ read_dotinst() {
     local subfolder=$(echo "$content" | jq -r '.subfolder // empty')
 
     local git_url="${git_url_raw/\$HOME/$HOME}"; git_url="${git_url/\~/$HOME}"
-    local user_post="$HOME/.config/ml4w-dotfiles-installer/$id/post.sh"
+    local user_post="$HOME/.config/differentunic-dotfiles-installer/$id/post.sh"
 
     local install_type_text="${GREEN}New Installation${NC}"
     [ -d "$target_base_dir/$id" ] && install_type_text="${YELLOW}Update of existing configuration${NC}"
@@ -321,7 +321,7 @@ read_dotinst() {
 
     if ! gum confirm "Do you want to proceed with the installation?"; then info "Installation cancelled by user."; exit 0; fi
 
-    local working_dir=$(mktemp -d -t ml4w-dots-XXXXXX)
+    local working_dir=$(mktemp -d -t differentunic-dots-XXXXXX)
     if [ -d "$git_url" ]; then
         info "Local repository detected. Copying source..."
         cp -a "$git_url/." "$working_dir/"
